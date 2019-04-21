@@ -7,10 +7,12 @@ int main()
 
 	int left = 0;
 	int right = sizeof(arr) / sizeof(arr[0]) - 1;    //字符串"/0"结尾所以减一
-
+	
 	while (left <= right)
 	{
 		int mid = left + (right - left) / 2;
+		//求两个数的中位数最好用（小+（大-小）/2）
+		//因为当两个数非常接近时结果可能为小数
 		if (arr[mid] < k)
 		{
 			left = mid + 1;
@@ -30,3 +32,4 @@ int main()
 	system("pause");
 	return 0;
 }
+ 
