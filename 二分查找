@@ -13,7 +13,9 @@ int main()
 		int mid = left + (right - left) / 2;
 		//求两个数的中位数最好用（小+（大-小）/2）
 		//因为当两个数非常接近时结果可能为小数
-		if (arr[mid] < k)
+		
+		
+		if (arr[mid] < k)		//arr[mid]  ,  k
 		{
 			left = mid + 1;
 		}
