@@ -4,7 +4,7 @@
 #include <math.h>
 double Distance(double x1,double y1,double x2,double y2)
 {
-	//double x = sqrt((pow(x1 - x2), 2) + (pow(y1 - y2), 2));
+	//double x = sqrt((pow(x1 - x2), 2) + (pow(y1 - y2), 2));     //！！！pow（底数，指数）而此处括号给了x1-x2!!!
 	double x = sqrt((x2 - x1)*(x2 - x1) + (y2 - y1)*(y2 - y1));
 	return x;
 }
