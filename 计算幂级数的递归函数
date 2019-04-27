@@ -1,0 +1,25 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <stdlib.h>
+int hansu(int x, int n)
+{
+	while (n >= 0)
+	{
+		if (n == 0)
+			return 1;
+		else
+		{
+			return x * hansu(x, n - 1);
+		}
+	}
+}
+int main()
+{
+	int x = 0, n;
+	printf("please input x , n :");
+	scanf("%d%d", &x, &n);
+	int A = hansu(x, n);
+	printf("答案为：%d", A);
+	system("pause");
+	return;
+}
