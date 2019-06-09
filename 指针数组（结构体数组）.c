@@ -43,7 +43,7 @@ void main()
 	nums[0] = &h.num;
 	p = &h;
 	h.next = NULL;
-	for (i = 1; i < 5; i++)
+	for (i = 1; i < 5; i++)		//创建链表
 	{
 		q = (stu*)malloc(sizeof(q));
 		scanf("%d", &q->num);
@@ -51,7 +51,7 @@ void main()
 		p->next = q;
 		p = q;
 	}
-	sort(nums, 5);
+	sort(nums, 5);		//排序
 	for (i = 0; i < 5; i++)
 	{
 		printf("%d ", **(nums + i));
