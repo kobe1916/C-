@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//创建结构体并声明
 typedef struct student
 {
 	int num;
