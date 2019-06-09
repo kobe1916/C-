@@ -12,6 +12,11 @@ int * sort(int *nums[5], int n)
 	int i, j, t;
 	for (i = 0; i < n - 1; i++)
 	{
+		//for(j= 0;j<n-i-1;j++);
+		/*两个循环的次数是一样多的，都是n-(j+1)次，
+		但在循环过程中i的值不一样
+		前者是0,1,2 …… n-(j+1)-1
+		后者是j+1,j+2,j+3……n-1*/
 		for (j = i + 1; j < n; j++)
 		{
 			if (**(nums + i) > **(nums + j))
