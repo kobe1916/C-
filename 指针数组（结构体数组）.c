@@ -8,6 +8,7 @@ typedef struct student
 	struct student *next;
 }stu;
 
+//排序    
 int * sort(int *nums[5], int n)
 {
 	int i, j, t;
@@ -20,6 +21,7 @@ int * sort(int *nums[5], int n)
 		后者是j+1,j+2,j+3……n-1*/
 		for (j = i + 1; j < n; j++)
 		{
+			//二级指针
 			if (**(nums + i) > **(nums + j))
 			{
 				t = **(nums + j);
@@ -34,6 +36,7 @@ int * sort(int *nums[5], int n)
 void main()
 {
 	int i;
+	//定义指针数组
 	int * nums[5];
 	stu h, *p, *q;
 	scanf("%d", &h.num);
