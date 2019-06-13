@@ -46,5 +46,5 @@ void main()
 		}
 		printf("\n");
 	}
-	getch();
+	system("pause");
 }
