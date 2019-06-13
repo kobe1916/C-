@@ -1,5 +1,5 @@
 #include <stdio.h>
-void main()
+int main()
 {
 	int i, j, n, *tem[3];
 	int p[2][3], q[3][2], r[2][2];
@@ -47,4 +47,5 @@ void main()
 		printf("\n");
 	}
 	system("pause");
+	return 0;
 }
