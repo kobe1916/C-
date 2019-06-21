@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
  
+
 typedef int DataType;
  
 typedef struct Node
