@@ -27,7 +27,7 @@ typedef struct NAME
 	char pwd[50];
 }Name;
 
-nba *savei(nba *head)
+nba *savei(nba *head)       //保存为文件
 {
 	FILE *fp;
 	nba *p;
