@@ -90,7 +90,7 @@ int pd(Name signin)
 	}
 }
 
-void sign()
+void sign()          
 {
 	Name signin;
 	FILE  *fp1;
@@ -125,7 +125,7 @@ void sign()
 	}
 }
 
-void login()
+void login()		//登陆
 {
 	Name log;
 	FILE *fp1;
@@ -195,7 +195,7 @@ void login()
 	
 }
 
-void process()
+void process()			//登陆成功提示
 {
 	system("cls");
 	printf("\n\n\n\n\n\n\n");
@@ -205,7 +205,7 @@ void process()
 	printf("\n\n\n\n\n\n\n");
 	printf("\t\t科比.布莱恩特---==≡≡ ...\n");
 	Sleep(400);
-	system("cls");
+	system("cls");                       //清屏
 	printf("\n\n\n\n\n\n\n");
 	printf("\t\t这球也能进？\n...\n");
 	Sleep(400);
