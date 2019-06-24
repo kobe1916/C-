@@ -9,21 +9,24 @@ void sign();
 void process();
 void sys_menu();
 void choose();
-typedef struct nba
+
+typedef struct nba           //链表
 {
-	char name[20]; //球员姓名
-	int num;//球衣号码
-	char team[20];//所在球队
-	float score;//得分
-	float block;//篮板
-	float assist;//助攻
-	struct nba *next;//指向下一个节点
+	char name[20];		 //球员姓名
+	int num;		//球衣号码
+	char team[20];		//所在球队
+	float score;		//得分
+	float block;		//篮板
+	float assist;		//助攻
+	struct nba *next;	//指向下一个节点
 }nba;
-typedef struct NAME
+
+typedef struct NAME		
 {
 	char name[50];
 	char pwd[50];
 }Name;
+
 nba *savei(nba *head)
 {
 	FILE *fp;
@@ -47,6 +50,7 @@ nba *savei(nba *head)
 	getch();
 	return head;
 }
+
 int pd(Name signin)
 {
 	FILE *fp1;
@@ -85,6 +89,7 @@ int pd(Name signin)
 		return 1;
 	}
 }
+
 void sign()
 {
 	Name signin;
@@ -119,6 +124,7 @@ void sign()
 		menu();
 	}
 }
+
 void login()
 {
 	Name log;
@@ -188,6 +194,7 @@ void login()
 		}
 	
 }
+
 void process()
 {
 	system("cls");
@@ -252,6 +259,7 @@ void process()
 	system("cls");
 	sys_menu();
 }
+
 nba *input()
 {
 	nba *p;
@@ -290,6 +298,7 @@ nba *input()
 	getch();
 	return p;
 }
+
 nba *print(nba *head)
 {
 	nba *p = head->next;
@@ -305,6 +314,7 @@ nba *print(nba *head)
 	getch();
 	return head;
 }
+
 nba *print2(nba *head)
 {
 	system("cls");
@@ -321,6 +331,7 @@ nba *print2(nba *head)
 	getch();
 	return head;
 }
+
 nba *print3(nba *head)
 {
 	system("cls");
@@ -337,6 +348,7 @@ nba *print3(nba *head)
 	getch();
 	return head;
 }
+
 nba *print4(nba *head)
 {
 	system("cls");
@@ -353,6 +365,7 @@ nba *print4(nba *head)
 	getch();
 	return head;
 }
+
 nba *del(nba *head)
 {
 	nba *q;
@@ -379,6 +392,7 @@ nba *del(nba *head)
 	getch();
 	return head;
 }
+
 nba *search(nba *head)
 {
 	system("cls");
@@ -406,6 +420,7 @@ nba *search(nba *head)
 	getch();
 	return head;
 }
+
 nba *rank1(nba *head)
 {
 	nba *p, *q, *t;
@@ -430,6 +445,7 @@ nba *rank1(nba *head)
 	print2(head);
 	return(head);
 }
+
 nba *rank2(nba *head)
 {
 	nba *p, *q, *t;
@@ -454,6 +470,7 @@ nba *rank2(nba *head)
 	print3(head);
 	return(head);
 }
+
 nba *rank3(nba *head)
 {
 	nba *p, *q, *t;
@@ -478,6 +495,7 @@ nba *rank3(nba *head)
 	print4(head);
 	return(head);
 }
+
 nba *change(nba *head)
 {
 	system("cls");
@@ -532,6 +550,7 @@ nba *change(nba *head)
 	getch();
 	return head;
 }
+
 nba *readi()
 {
 	nba *head, *q, *p;
@@ -639,6 +658,7 @@ main()
 	//Colorsetting();
 	//menu();
 }
+
 void choose()
 {
 	int x;
@@ -657,6 +677,7 @@ void choose()
 	default: printf("\t\t对不起，您输入有误，请重新开始!"); getch(); choose();
 	}
 }
+
 void Colorsetting()
 {
 	int a;
