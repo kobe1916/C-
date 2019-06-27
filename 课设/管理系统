@@ -1,1 +1,245 @@
+#define _CRT_SECURE_NO_WARNINGS 1
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <windows.h>
+#include <string.h>
+
+typedef struct nba      //球员信息
+{
+	char name[20];      //姓名
+	int num;			//号码
+	char team[20];		//球队
+	float score;		//得分
+	float block;		//篮板
+	float assist;       //助攻
+	struct nba *next;
+}nba;
+
+nba* input()		//录入信息
+{
+	system("cls");            //跳转入函数后清屏
+
+	nba* head;
+	nba* tail;
+	nba* p;
+	head = (nba*)malloc(sizeof(nba));
+	head ->next = NULL;
+	int x = 0;
+	int i = 0;
+
+	printf("请输入要录入球员信息个数：>");
+	scanf("%d", &i);
+	do
+	{
+		p = (nba *)malloc(sizeof(nba));     //开辟空间需要大小    sizeof。。。
+		printf("\t*****************请输入第%d个球员信息*******************\n",i + 1);
+		printf("请输入球员姓名：>");
+		scanf("%s", p->name);
+		printf("请输入球员所在球队名：>");
+		scanf("%s", p->team);
+		printf("请输入球员球衣号码：>");
+		//scanf("%d", p->num);   录入数字需要取值符
+		scanf("%d",&p->num);
+		printf("请输入球员得分：>");
+		scanf("%f", &p->score);
+		printf("请输入球员篮板：>");
+		scanf("%f", &p->block);
+		printf("请输入球员助攻：>");
+		scanf("%f", &p->assist);
+		x++;
+	} while (x < i);
+	printf("恭喜你，录入信息成功！");
+	return head;
+}
+
+nba* mod()	//修改信息
+{
+	system("cls");
+	nba* p = head;		//从头结点开始找起
+	
+	
+	int choice;
+	char id[20];
+	printf("\n\t请输入要修改的球员姓名：>\n");
+	scanf("%s", &id);
+	//while (strcmp(p->name, id));	//对比查找
+	while (p&&strcmp(p->name, id) != 0)    //要信息存在且相同才能修改
+	{
+		p = p->next;
+	}
+	if (p)
+	{
+		
+		printf("\n\n                              --球员信息--                                            \n\n");
+		printf("\t------------------------------------------------------------------------------------------\n");
+		printf("\t姓名------------号码-------------球队-----------得分------------篮板-------------助攻-----\n");
+		printf("\t%-17s%-16d%-15s%-16.1f%-17.1f%-17.1f\n", p->name, p->num, p->team, p->score, p->block, p->assist);
+		printf("\n\n");
+		printf("\t\t-------------------修改选项------------------\n");
+		printf("\t\t|                 1.球员姓名                |\n");
+		printf("\t\t|                 2.球员号码                |\n");
+		printf("\t\t|                 3.球员球队                |\n");
+		printf("\t\t|                 4.球员得分                |\n");
+		printf("\t\t|                 5.球员篮板                |\n");
+		printf("\t\t|                 6.球员助攻                |\n");
+		printf("\t\t---------------------------------------------\n");
+		printf("请输入你要修改的选项：>");
+		scanf("%d", &choice);
+		switch (choice)
+		{
+		case 1:
+			printf("\n                   请输入修改后的姓名:");
+			scanf("%s", p->name);
+			break;
+		case 2:printf("\n                   请输入修改后的号码:");
+			scanf("%d", &p->num);
+			break;
+		case 3:
+			printf("\n                   请输入修改后的队伍:");
+			scanf("%s", p->team);
+			break;
+		case 4:
+			printf("\n                   请输入修改后的得分:");
+			scanf("%f", &p->score);
+			break;
+		case 5:
+			printf("\n                   请输入修改后的篮板:");
+			scanf("%f", &p->block);
+			break;
+		case 6:
+			printf("\n                   请输入修改后的助攻:");
+			scanf("%f", &p->assist);
+			break;
+		default:
+			printf("输入错误，请重新输入！");
+			break;
+		}
+		printf("\n\n恭喜你，修改成功");
+
+		//展示修改后结果
+		printf("\n\n                              --球员信息--                                            \n\n");
+		printf("\t------------------------------------------------------------------------------------------\n");
+		printf("\t姓名------------号码-------------球队-----------得分------------篮板-------------助攻-----\n");
+		printf("\t%-17s%-16d%-15s%-16.1f%-17.1f%-17.1f\n", p->name, p->num, p->team, p->score, p->block, p->assist);
+	}
+
+}
+
+nba* del()		//删除信息
+{
+
+}
+
+nba* search()		//查询球员信息
+{
+
+}
+
+nba* show()			//展示所有球员信息
+{
+
+}
+
+
+nba* score()		//得分排行
+{
+
+}
+
+nba* block()		//篮板排行
+{
+
+}
+
+nba* assist()		//助攻排行
+{
+
+}
+
+nba* display()		//展示已存球员信息
+{
+
+}
+
+nba* save()		//保存文件
+{
+
+}
+
+void welcome()
+{
+	system("cls");						//清屏操作
+	printf("\n\n\n\n\n\n\n");
+	printf("\t\t1.\n");
+	Sleep(400);                        //等待
+	system("cls");
+
+	printf("\n\n\n\n\n\n\n");
+	printf("\t\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	printf("\t\t~********************************************************************************~\n");
+	printf("\t\t~  *      *      *  * * * *  *        * * *    * * *       *     *     * * * *   ~\n");
+	printf("\t\t~  *      *      *  *        *       *       *       *    * *   * *    *         ~\n");
+	printf("\t\t~   *     *     *   * * * *  *      *       *         *  *   * *   *   * * * *   ~\n");
+	printf("\t\t~    *  *   *  *    *        *       *       *       *  *     *     *  *         ~\n");
+	printf("\t\t~     *       *     * * * *  * * * *  * * *    * * *    *     *     *  * * * *   ~\n");
+	printf("\t\t~********************************************************************************~\n");
+	printf("\t\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	Sleep(1200);
+	printf("\n\n\n\n\n\n\n");
+	system("cls");
+}
+
+void menu()
+{
+	welcome();
+	int choose = 0;
+	do
+	{
+		system("cls");
+		printf("\n\n");
+		printf("\t┌────────────────────────────────┐\n");
+		printf("\t│                欢迎来到NBA球员管理系统！！                     │\n");
+		printf("\t│-------------------This is why we play! ----------------------  │\n");
+		printf("\t│                    1-  录入球员信息                            │\n");
+		printf("\t│                    2-  修改球员信息                            │\n");
+		printf("\t│                    3-  删除球员信息                            │\n");
+		printf("\t│                    4-  查询球员信息                            │\n");
+		printf("\t│                    5-  展示所有球员信息                        │\n");
+		printf("\t│                    6-  得分排名                                │\n");
+		printf("\t│                    7-  篮板排行                                │\n");
+		printf("\t│                    8-  助攻排行                                │\n");
+		printf("\t│                    9-  查看已存球员信息                        │\n");
+		printf("\t│                    10- 录入完记得保存                          │\n");
+		printf("\t│                    0-  退出程序                                │\n");
+		printf("\t└────────────────────────────────┘\n");
+		printf("\t注意:在未输入任何信息前,只能查看已存信息\n");
+		printf("\t欢迎使用NBA球星管理系统，请选择功能0-10：  ");
+		scanf("%d", &choose);
+		switch (choose)
+		{
+		case 1:input(); break;    //录入信息
+		case 2:mod(); break;      //修改
+		case 3:del(); break;	  //删除
+		case 4:search(); break;	  //查找
+		case 5:show(); break;	  //展示
+		case 6:score(); break;    //得分
+		case 7:block(); break;    //篮板
+		case 8:assist(); break;   //助攻
+		case 9:display(); break;     //查看已存信息
+		case 10:save(); break;    //保存
+		case 0:printf("退出程序，再见！\n"); break;
+		default:
+			printf("输入错误，请重新输入！\n"); break;
+		}
+	} while (choose);
+}
+
+int main()
+{
+	menu();
+
+	system("pause");
+
+	return 0;
+}
