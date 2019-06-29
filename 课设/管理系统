@@ -288,14 +288,86 @@ nba* score(nba* head)		//得分排序
 nba* block(nba *head)		//篮板排序
 {
 	system("cls");
+	system("cls");
+	nba *p;
+	nba *q;
+	nba *t;
+	t = NULL;
+	while (t != head->next)
+	{
+		p = head;		//接收头结点
+		q = p->next;	//头结点的下一个
+		while (q->next != t)   //第一节点非空
+		{
+			if (p->next->block < q->next->block)   //第一节点小于第二节点
+			{
+				p->next = q->next;              //第一->第二
+				q->next = q->next->next;		//第二->第三
+				p->next->next = q;				//
+			}
+			p = p->next;
+			q = p->next;
+		}
+		t = q;
+	}
+
+	system("cls");
+
+	p = head->next;
+	printf("\n\n \t--篮板榜排名--\n\n");
+	printf("\t-------------------\n");
+	printf("\t姓名-----------得分\n");
+	while (p)
+	{
+		printf("\t%-17s%-16.1f\n", p->name, p->block);
+		p = p->next;
+	}
+	printf("\n          按任意键返回！");
+	getch();
+	return head;
 
 }
 
 nba* assist(nba *head)		//助攻排序
 {
+	system("cls");
+	system("cls");
+	nba *p;
+	nba *q;
+	nba *t;
+	t = NULL;
+	while (t != head->next)
+	{
+		p = head;		//接收头结点
+		q = p->next;	//头结点的下一个
+		while (q->next != t)   //第一节点非空
+		{
+			if (p->next->assist< q->next->assist)   //第一节点小于第二节点
+			{
+				p->next = q->next;              //第一->第二
+				q->next = q->next->next;		//第二->第三
+				p->next->next = q;				//
+			}
+			p = p->next;
+			q = p->next;
+		}
+		t = q;
+	}
 
 	system("cls");
 
+	p = head->next;
+	printf("\n\n \t--助攻榜排名--\n\n");
+	printf("\t-------------------\n");
+	printf("\t姓名-----------得分\n");
+	while (p)
+	{
+		printf("\t%-17s%-16.1f\n", p->name, p->assist);
+		p = p->next;
+	}
+	printf("\n          按任意键返回！");
+	getch();
+	return head;
 }
 
 nba* display(nba *head)		//展示已存球员信息
@@ -304,31 +376,31 @@ nba* display(nba *head)		//展示已存球员信息
 
 }
 
-nba* save(nba *head)		//保存文件
-{
-	system("cls");
-	FILE *fp;
-	nba *p;
-	//p = head;
-	char filmname[40];
-	printf("\t完成所有操作后便可存入文件中！\n");
-	printf("\n\t输入要保存的文件名：  ");
-	scanf("%s", filmname);
-	if ((fp = fopen(filmname, "a+")) == NULL)
-	{
-		printf("\t写文件出错，按任意键退出！");
-		getch();
-		exit(1);
-	}
-	for (p = head->next; p != NULL; p = p->next)
-	{
-		fprintf(fp, "%s %d %s %.1f %.1f %.1f\n", p->name, p->num, p->team, p->score, p->block, p->assist);
-	}
-	fclose(fp);
-	printf("\n\t文件已经保存成功！");
-	getch();
-	return head;
-}
+//nba* save(nba *head)		//保存文件
+//{
+//	system("cls");
+//	FILE *fp;
+//	nba *p;
+//	//p = head;
+//	char filmname[40];
+//	printf("\t完成所有操作后便可存入文件中！\n");
+//	printf("\n\t输入要保存的文件名：  ");
+//	scanf("%s", filmname);
+//	if ((fp = fopen(filmname, "a+")) == NULL)
+//	{
+//		printf("\t写文件出错，按任意键退出！");
+//		getch();
+//		exit(1);
+//	}
+//	for (p = head->next; p != NULL; p = p->next)
+//	{
+//		fprintf(fp, "%s %d %s %.1f %.1f %.1f\n", p->name, p->num, p->team, p->score, p->block, p->assist);
+//	}
+//	fclose(fp);
+//	printf("\n\t文件已经保存成功！");
+//	getch();
+//	return head;
+//}
 
 void welcome()
 {
@@ -412,7 +484,7 @@ void menu()
 			display(head);
 			break;     //查看已存信息
 		case 10:
-			save();
+			//save();
 			break;    //保存
 		//case 0:printf("退出程序，再见！\n"); break;
 		//default:
