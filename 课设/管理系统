@@ -376,38 +376,38 @@ nba* display(nba *head)		//展示已存球员信息
 
 }
 
-//nba* save(nba *head)		//保存文件
-//{
-//	system("cls");
-//	FILE *fp;
-//	nba *p;
-//	//p = head;
-//	char filmname[40];
-//	printf("\t完成所有操作后便可存入文件中！\n");
-//	printf("\n\t输入要保存的文件名：  ");
-//	scanf("%s", filmname);
-//	if ((fp = fopen(filmname, "a+")) == NULL)
-//	{
-//		printf("\t写文件出错，按任意键退出！");
-//		getch();
-//		exit(1);
-//	}
-//	for (p = head->next; p != NULL; p = p->next)
-//	{
-//		fprintf(fp, "%s %d %s %.1f %.1f %.1f\n", p->name, p->num, p->team, p->score, p->block, p->assist);
-//	}
-//	fclose(fp);
-//	printf("\n\t文件已经保存成功！");
-//	getch();
-//	return head;
-//}
+nba* save(nba *head)		//保存文件
+{
+	system("cls");
+	FILE *fp;   //定义文件指针
+	nba *p;
+	//p = head;   //接收头结点
+	char filmname[40];
+	printf("\t完成所有操作后便可存入文件中！\n");
+	printf("\n\t输入要保存的文件名：  ");
+	scanf("%s", filmname);
+	if ((fp = fopen(filmname, "a+")) == NULL)
+	{
+		printf("\t写文件出错，按任意键退出！");
+		getch();
+		exit(1);
+	}
+	for (p = head->next; p != NULL; p = p->next)
+	{
+		fprintf(fp, "%s %d %s %.1f %.1f %.1f\n", p->name, p->num, p->team, p->score, p->block, p->assist);
+	}
+	fclose(fp);
+	printf("\n\t文件已经保存成功！");
+	getch();
+	return head;
+}
 
 void welcome()
 {
 
 	system("cls");						//清屏操作
 	printf("\n\n\n\n\n\n\n");
-	printf("\t\t1.\n");
+	//printf("\t\t1.\n");
 	Sleep(400);                        //等待
 	system("cls");
 
