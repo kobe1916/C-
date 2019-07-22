@@ -13,7 +13,7 @@ int m; //报数号
 void JosephRing(int n, int k, int m)
 {
 	int i;
-	LinkList p ; /* p为当前结点,r为辅助结点，指向p的前驱结点*/
+	LinkList p ,r; /* p为当前结点,r为辅助结点，指向p的前驱结点*/
 	
 	for (int i = 1; i <= n; i++) /*建立循环链表*/
 	{
