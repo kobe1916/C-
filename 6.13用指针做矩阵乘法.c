@@ -3,6 +3,7 @@ int main()
 {
 	int i, j, n, *tem[3];
 	int p[2][3], q[3][2], r[2][2];
+	// m*s   p*n --> m*n
 	tem[0] = p[0]; tem[1] = q[0]; tem[2] = r[0];
 	printf("请输入第1个矩阵:\n");
 	for (i = 0; i < 2; i++)
