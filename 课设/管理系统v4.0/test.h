@@ -7,8 +7,6 @@
 #include <string.h>
 
 //多文件下结构体必须定义在头文件中
-
-
 //球员信息
 typedef struct nba      //球员信息
 {
