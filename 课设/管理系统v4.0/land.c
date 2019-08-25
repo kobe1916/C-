@@ -16,6 +16,8 @@ void login()
 	getchar();
 	gets(ch);
 	printf("\t请输入密码：");
+	
+	//密码隐藏及回退
 	for (i = 0;; i++)
 	{
 		//arr[i]--> *(arr+i)
