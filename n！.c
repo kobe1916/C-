@@ -1,4 +1,4 @@
-1.
+//1.函数写法
 #include <stdio.h>
 #include <stdlib.h>
  
@@ -23,7 +23,7 @@ int main()
     return 0;
 }
 
-2.
+//2.递归写法
 #include <stdio.h>
 #include <stdlib.h>
  
